@@ -9,12 +9,12 @@ class Model:
 
     def gradient_boosting(self, **params):
         self.reshape()
-        clf = GradientBoostingClassifier(params)
+        clf = GradientBoostingClassifier(**params)
         return clf.fit(X_train, y_train)
 
     def svm_classification(self, **params):
         self.reshape()
-        clf = svm.SVC(params)
+        clf = svm.SVC(**params)
         return clf.fit(self.X_train, self.y_train)
 
     def reshape(self):
